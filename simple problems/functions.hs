@@ -1,4 +1,5 @@
 import Data.List
+import Data.Array
 import Data.Numbers.Primes
 
 
@@ -67,3 +68,8 @@ getNumFactors n = 2 * length [x | x <- [1..maxFactor], n `mod` x == 0]
 
 getTruncSqrt :: Int -> Int
 getTruncSqrt n = floor $ sqrt $ fromIntegral n
+
+stringToMatrix :: String -> (Int, Int) -> Array(Int, Int) Int
+stringToMatrix input (x, y) = listArray ((1, 1), (x, y)) $ map read $ words input
+
+
