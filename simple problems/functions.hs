@@ -1,6 +1,7 @@
 import Data.List
 import Data.Array
 import Data.Numbers.Primes
+import Data.Char
 
 
 multiplesThreeFive :: Int -> Int
@@ -73,3 +74,17 @@ stringToMatrix :: String -> (Int, Int) -> Array(Int, Int) Int
 stringToMatrix input (x, y) = listArray ((1, 1), (x, y)) $ map read $ words input
 
 
+ones = ["one", "two", "three", "four", "five", "six", "seven", "eight", "nine",
+        "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"]
+decas = ["twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"]
+
+
+numberToString :: Int -> String
+numberToString n 
+    | n < 20 = ones!!(n - 1)
+    | n >= 20 && n < 100 = decas!!(ten-2) ++ if one /= 0 then ones!!(one - 1) else ""
+    | n >= 100 && n < 1000 = ones!!(cent-1) ++ "hundred" ++ if remainder /= 0 then  "and" ++ numberToString remainder else ""
+    | n == 1000 = "onethousand"
+    | otherwise = ""
+    where (cent, remainder) = n `divMod` 100
+          (ten, one) = n `divMod` 10
