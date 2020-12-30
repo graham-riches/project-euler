@@ -88,3 +88,19 @@ numberToString n
     | otherwise = ""
     where (cent, remainder) = n `divMod` 100
           (ten, one) = n `divMod` 10
+
+
+helloWorlds :: Int -> [String]
+helloWorlds n = ["Hello World" | x <- [1..n]]
+
+getOdds :: [Int] -> [Int]
+getOdds lst = [x | (x, y) <- zip lst [1..n], odd y]
+        where n = length lst
+
+seriesExpansion :: Double -> Double
+seriesExpansion n = 1 + sum [n^x / fromIntegral(factorial x) | x <- [1..9]]    
+
+factorial :: Integer -> Integer
+factorial n 
+    | n == 1  = 1
+    | otherwise = n * factorial(n - 1)
