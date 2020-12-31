@@ -101,6 +101,11 @@ seriesExpansion :: Double -> Double
 seriesExpansion n = 1 + sum [n^x / fromIntegral(factorial x) | x <- [1..9]]    
 
 factorial :: Integer -> Integer
-factorial n 
-    | n == 1  = 1
-    | otherwise = n * factorial(n - 1)
+factorial n = product[1..n]
+
+divisorSum :: Int -> Int
+divisorSum n = sum $ [x | x <- [1..(n `div` 2)], n `mod` x == 0]
+
+getAmicableNumbers :: [(Int, Int)] -> [Int]
+getAmicableNumbers lst = [x | (x,y) <- lst, opposite x y == x, x /= y]
+    where opposite x y = if y < length lst then snd $ lst !! y else -1
