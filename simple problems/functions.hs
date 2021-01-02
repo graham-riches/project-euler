@@ -14,11 +14,11 @@ fibonacci :: Int -> Int
 fibonacci 0 = 1
 fibonacci n = n + fibonacci(n-1)
 
+fibs :: [Integer]
+fibs = 0:1:zipWith (+) fibs (tail fibs)
 
-fibonacciLessThan :: Int -> [Int]
-fibonacciLessThan n = takeWhile (<= n) fibs
-   where fibs = 0 : 1 : zipWith (+) fibs (tail fibs)
-
+fibonacciLessThan :: Integer -> [Integer]
+fibonacciLessThan n = takeWhile (<= n) fibs   
 
 getEvens :: [Int] -> [Int]
 getEvens = filter even
@@ -109,3 +109,4 @@ divisorSum n = sum $ [x | x <- [1..(n `div` 2)], n `mod` x == 0]
 getAmicableNumbers :: [(Int, Int)] -> [Int]
 getAmicableNumbers lst = [x | (x,y) <- lst, opposite x y == x, x /= y]
     where opposite x y = if y < length lst then snd $ lst !! y else -1
+
