@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "NMIfmSn5HW/6PCxcbcm6jb7SXmKIkuzCFpGBW5EUBPP+a0jl86Lj2EFNXbtqzVpmwwH71nq0MCrYb5FMtGWQMQ==",
+  "success": true,
+  "projectFilePath": "D:\\Code\\Haskell\\project-euler\\ProjectEuler\\ProjectEuler.fsproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Graham Cracker\\.nuget\\packages\\fsharp.core\\5.0.0\\fsharp.core.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
